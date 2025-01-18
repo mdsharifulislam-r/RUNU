@@ -13,7 +13,7 @@ export default function MessageBox({ message }: { message: MessageType }) {
         {message.type=='text'? <span>{message.content}</span>:<Image src={message.content} alt="image" width={200} height={200}/>}
       </div>
     </div>:<div className="chat chat-start">
-      <div className="chat-bubble bg-emerald-500 text-white">
+      <div className="chat-bubble bg-gray-500 text-white">
         {message.type=='text'? <span>{message.content}</span>:<Image src={message.content} alt="image" width={200} height={200}/>}
       </div>
     </div> }
