@@ -50,6 +50,8 @@ export default function SideBar() {
   const showUsers = onlineUsers?.map(item=>(
     <UserBox userId={item.userId} socketId={item.socketId} key={item.userId}/>
   ))
+  const [hydred,serHydred]=useState(false)
+  useEffect(()=>serHydred(true),[])
   return (
     <div  className='w-full h-[100vh] md:h-[90vh] overflow-y-scroll bg-gray-800 rounded-xl '>
      <div className="header p-5 sticky top-0 bg-gray-800 z-10">
@@ -66,7 +68,7 @@ export default function SideBar() {
               <BiMessage/>
               </Link>
             </div>
-            <ProfileButton/>
+            {hydred && <ProfileButton/>}
             </div>
         </div>
         <div>

@@ -1,5 +1,6 @@
 'use client'
 import { setUser } from '@/lib/features/user.reducer'
+import { logOutUser } from '@/lib/helpers/logoutUser'
 import { useAppDispatch, useAppSelector } from '@/lib/hooks'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
@@ -11,13 +12,7 @@ export default function ProfileButton() {
     const router = useRouter()
     const dispatch = useAppDispatch()
     const logout = async ()=>{
-        const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/auth/logout`,{
-            method:"DELETE",
-            credentials:"include"
-        })
-
-        const data = await res.json()
-
+      const data = await logOutUser()
         if(data.status){
             toast.success(data.message)
             dispatch(setUser(null))

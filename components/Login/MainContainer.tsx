@@ -10,6 +10,7 @@ import { useAppDispatch } from '@/lib/hooks'
 import { setUser } from '@/lib/features/user.reducer'
 import Image from 'next/image'
 import Link from 'next/link'
+import { loginUser } from '@/lib/helpers/loginUser'
 
 export default function MainContainer() {
   const initalState = {
@@ -29,15 +30,7 @@ export default function MainContainer() {
     onSubmit:async (values,action)=>{
      
       setIsLoading(true)
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/auth/login`,{
-        method:"POST",
-        headers:{
-          'Content-Type':'application/json'
-        },
-        body:JSON.stringify(values),
-        credentials:"include"
-      })
-      const data = await res.json()
+      const data = await loginUser(values)
    
       
       if(data.status){
