@@ -1,10 +1,10 @@
-import Hero from '../components/Home/hero'
+import MainContainer from '@/components/SingleChat/MainContainer'
 import React from 'react'
 
 export default function page() {
   return (
     <div>
-      <Hero/>
+      <MainContainer/>
     </div>
   )
 }
