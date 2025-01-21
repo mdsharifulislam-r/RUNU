@@ -9,11 +9,12 @@ export default function MessageContainer({socket,id}:{socket:Socket,id:any}) {
   const [messages,setMessages]=useState<MessageType[]>([])
   const divRef = useRef<HTMLDivElement>(null)
   const user = useAppSelector(state=>state.userReducer.user)
+  const audio = new Audio('/audios/bell.mp3')
   const dispatch = useAppDispatch()
   socket.on("message",(message:MessageType[])=>{
     setMessages(prev=>message)
     dispatch(setReload())
-    
+    audio.play()
   })
 const reload = useAppSelector(state=>state.userReducer.reload)
   useEffect(()=>{

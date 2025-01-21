@@ -28,7 +28,7 @@ export default function ChangePassword({isShow}:{isShow:()=>void}) {
     })
   return (
     <div className='fixed w-full h-full top-0 left-0 bg-black/70 flex justify-center place-items-center z-50'>
-    <form onSubmit={handleSubmit} className="md:w-[50%] w-[80%] p-5 bg-slate-800 rounded-md">
+    <form onSubmit={handleSubmit} className="md:w-[50%] w-[90%] p-5 bg-slate-800 rounded-md">
         <h1 className='text-gray-100 text-3xl'>Change <span className='text-emerald-500'>Password</span></h1>
         <input type="password" required name="oldPass" value={values.oldPass} onChange={handleChange} className='w-full py-2 px-3 bg-slate-700 focus:outline-none mt-3' id="" placeholder='Old Password' />
         <input type="password" required name="newPass" value={values.newPass} onChange={handleChange} className='w-full py-2 px-3 bg-slate-700 focus:outline-none mt-3' id="" placeholder='New Password' />

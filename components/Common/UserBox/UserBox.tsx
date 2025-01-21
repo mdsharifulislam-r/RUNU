@@ -27,10 +27,12 @@ export default function UserBox({userId,socketId}:{userId:number,socketId:string
   },[])
 
   const [message,setMessage]=useState<MessageType>()
+  const audio = new Audio('/audios/bell.mp3')
   useEffect(()=>{
     socket.on("last-message",(data)=>{
       setMessage(data)
     })
+    audio.play()
   },[reload])
   
   window.addEventListener('resize',()=>{
