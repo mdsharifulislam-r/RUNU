@@ -45,7 +45,7 @@ export default function MainContainer() {
   });
 
   return (
-    <div className="md:w-[40%] w-[90%] h-[90vh] overflow-y-scroll bg-gray-800 rounded-xl">
+    <div className="md:w-[40%] w-[100%] md:h-[90vh] h-screen overflow-y-scroll bg-gray-800 rounded-xl">
       <div className="header p-5">
         <div>
           <span className="text-gray-100 text-2xl font-bold">Add Friends</span>
